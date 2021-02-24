@@ -1,0 +1,73 @@
+package com.spring.waldom.aplikasidompet.model;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.Date;
+
+@Entity
+@Table(name = "dompetsaya")
+public class Dompet {
+
+    @Id
+    @Column(name="id_dom")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_dom;
+
+    @Column(name = "keterangan")
+    private String keterangan;
+
+    @Column(name = "date")
+//    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    private Date tanggal;
+
+    @Column(name = "pendapatan")
+    private Double pendapatan;
+
+    @Column(name = "pengeluaran")
+    private Double pengeluaran;
+
+    public Double getPendapatan() {
+        return pendapatan;
+    }
+
+
+    public Long getId_dom() {
+        return id_dom;
+    }
+
+    public void setId_dom(Long id_dom) {
+        this.id_dom = id_dom;
+    }
+
+    public String getKeterangan() {
+        return keterangan;
+    }
+
+    public void setKeterangan(String keterangan) {
+        this.keterangan = keterangan;
+    }
+
+    public Date getTanggal() {
+        return tanggal;
+    }
+
+    public void setTanggal(Date tanggal) {
+        this.tanggal = tanggal;
+    }
+
+    public void setPendapatan(Double pendapatan) {
+        this.pendapatan = pendapatan;
+    }
+
+    public Double getPengeluaran() {
+        return pengeluaran;
+    }
+
+    public void setPengeluaran(Double pengeluaran) {
+        this.pengeluaran = pengeluaran;
+    }
+}
+

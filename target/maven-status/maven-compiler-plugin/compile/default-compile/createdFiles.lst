@@ -1,0 +1,6 @@
+com\spring\waldom\aplikasidompet\AplikasidompetApplication.class
+com\spring\waldom\aplikasidompet\controller\DompetController.class
+com\spring\waldom\aplikasidompet\repository\DompetRepository.class
+com\spring\waldom\aplikasidompet\model\Dompet.class
+com\spring\waldom\aplikasidompet\service\DompetServiceImpl.class
+com\spring\waldom\aplikasidompet\service\DompetService.class
