@@ -34,17 +34,6 @@
 
         <input hidden id="date" name="date" th:field="*{tanggal}">
 
-<!--        <div class="form-group">-->
-<!--            <select class="form-control mb-4 col-4" th:field="*{jenisTransaksi}">-->
-<!--&lt;!&ndash;                <option value=""> &#45;&#45;&#45;&#45; Pilih Jenis &#45;&#45;&#45;&#45; </option>&ndash;&gt;-->
-<!--                <option value="Pengeluaran">Pengeluaran</option>-->
-<!--                <option value="Pendapatan">Pendapatan</option>-->
-<!--            </select>-->
-<!--            <div class="invalid-feedback">-->
-<!--                Jenis transaksi tidak boleh kosong.-->
-<!--            </div>-->
-<!--        </div><br><br>-->
-
         <button type="submit" class="btn btn-info col-2"> Save Pendapatan</button>
         <div th:if="${#fields.hasErrors('all')}">
             <div class="form-group">

@@ -1,10 +1,6 @@
 package com.spring.waldom.aplikasidompet.model;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -20,18 +16,14 @@ public class Dompet {
     private String keterangan;
 
     @Column(name = "date")
-//    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private Date tanggal;
 
     @Column(name = "pendapatan")
-    private Double pendapatan;
+    private Double pendapatan = Double.valueOf(0);
 
     @Column(name = "pengeluaran")
-    private Double pengeluaran;
+    private Double pengeluaran = Double.valueOf(0);
 
-    public Double getPendapatan() {
-        return pendapatan;
-    }
 
 
     public Long getId_dom() {
@@ -56,6 +48,10 @@ public class Dompet {
 
     public void setTanggal(Date tanggal) {
         this.tanggal = tanggal;
+    }
+
+    public Double getPendapatan() {
+        return pendapatan;
     }
 
     public void setPendapatan(Double pendapatan) {

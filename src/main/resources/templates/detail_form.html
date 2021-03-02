@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Detail Mahasiswa</title>
+    <meta charset="ISO-8859-1">
+    <title>Manajemen Dompet</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<form onload="validasiForm">
+<form>
 <div class="container">
     <h4 class="mb-3 mt-3">Detail Transaksi</h4>
     <table class = "table table-bordered table-striped table-hover">
@@ -34,18 +34,4 @@
 </div>
 </form>
 </body>
-<script>
-    function removeElement() {
-      document.getElementById("imgbox1").style.display = "none";
-    }
-
-    function changeVisibility() {
-      document.getElementById("imgbox2").style.visibility = "hidden";
-    }
-
-    function resetElement() {
-      document.getElementById("imgbox1").style.display = "block";
-      document.getElementById("imgbox2").style.visibility = "visible";
-    }
-</script>
 </html>

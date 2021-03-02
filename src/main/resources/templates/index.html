@@ -14,11 +14,9 @@
         color: red;
       }
     </style>
-
-
 </head>
-<body>
 
+<body>
 <div class="container my-2">
     <h1 align="center">Dompet List</h1><br>
 
@@ -33,7 +31,7 @@
     </div>
 
     <div class="box">
-        <p align="right" style="font-size:23px" class="redtext">SALDO ANDA: <a th:text="${message}"> </a></p>
+        <p align="right" style="font-size:23px" class="redtext">SALDO ANDA: <a th:text="${sisaSaldo}"> </a></p>
     </div>
 
     <table class = "table table-bordered table-striped table-hover">
@@ -64,14 +62,45 @@
             <td th:text="${dompet.pendapatan}" style="color:green"><font>+</font></td>
             <td th:text="${dompet.pengeluaran}" style="color:red">-</td>
             <td th:text="${dompet.keterangan}"></td>
-            <td> <a th:href="@{/deleteDompet/{id}(id=${dompet.id_dom})}" class="btn btn-danger" onclick="if(confirm('Are you sure want to Delete ?') ){
-                form.onsubmit = null;
-                return true
-                }
-                else return false;">Hapus</a>
-<!--                <form method="get" th:action="@{/detail_form(id=${dompet.id_dom})}" class="d-inline">-->
-<!--                    <button type="submit" name="id" th:value="${dompet.id_dom}" class="btn btn-primary">Detail</button>-->
-<!--                </form>-->
+            <td>
+<!--                <a th:href="@{/deleteDompet/{id}(id=${dompet.id_dom})}" class="btn btn-danger" onclick="if(confirm('Are you sure want to Delete ?') ){-->
+<!--                form.onsubmit = null;-->
+<!--                return true-->
+<!--                }-->
+<!--                else return false;">Hapus</a>-->
+
+                <form method="post" th:action="@{/deleteDompet/{id}(id=${dompet.id_dom})}" class="d-inline">
+                    <input type="hidden" name="_method" value="delete"/>
+                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                            data-target="#exampleModalCenter">Hapus
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalCenterTitle">Hapus data dompet</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Apakah Anda yakin akan menghapus data?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                                    <button type="submit" class="btn btn-primary">Ya</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <form method="get" th:action="@{/detail_form(id=${dompet.id_dom})}" class="d-inline">
+                    <button type="submit" name="id" th:value="${dompet.id_dom}" class="btn btn-primary">Detail</button>
+                </form>
+
             </td>
         </tr>
         </tbody>
@@ -101,14 +130,6 @@
 
 </div>
 </body>
-<script>
-	var bilangan1 = 6;
-	var bilangan2 = 2;
-
-	var penjumlahan = bilangan1 + bilangan2;
-
-	document.getElementById("penjumlahan").innerHTML = penjumlahan;
-</script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

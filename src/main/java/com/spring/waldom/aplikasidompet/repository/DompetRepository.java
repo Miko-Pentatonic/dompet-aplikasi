@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface DompetRepository extends JpaRepository<Dompet, Long> {
-
+    @Query(value = "SELECT sum(pendapatan - pengeluaran) FROM Dompet")
+    Double hitungSisaSaldo();
 }
 

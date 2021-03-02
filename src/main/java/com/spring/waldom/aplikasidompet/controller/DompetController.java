@@ -1,7 +1,6 @@
 package com.spring.waldom.aplikasidompet.controller;
 
 import com.spring.waldom.aplikasidompet.model.Dompet;
-import com.spring.waldom.aplikasidompet.repository.DompetRepository;
 import com.spring.waldom.aplikasidompet.service.DompetService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +20,6 @@ public class DompetController {
 
     @Autowired
     private DompetService dompetService;
-    private DompetRepository dompetRepository;
 
     @GetMapping("/")
     public String viewBeranda(Model model) {
@@ -53,7 +51,8 @@ public class DompetController {
         return "redirect:/";
     }
 
-    @GetMapping("/deleteDompet/{id}")
+//    @GetMapping("/deleteDompet/{id}")
+    @RequestMapping(method = RequestMethod.POST, value = "/deleteDompet/{id}")
     public String deleteDompet(@PathVariable (value = "id") long id) {
 
         // call delete dompet method
@@ -80,6 +79,7 @@ public class DompetController {
         model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
 
         model.addAttribute("listDompet", listDompet);
+        model.addAttribute("sisaSaldo", dompetService.sisaSaldo());
         return "index";
     }
 
@@ -89,17 +89,6 @@ public class DompetController {
             dompet = new Dompet();
         }
         return new ModelMap().addAttribute("dompet", dompet);
-    }
-
-    @PostMapping("/getSisaSaldo")
-    public String getSisaSaldo() {
-        this.dompetService.sisaSaldo();
-        logger.trace("A TRACE Message");
-        logger.debug("A DEBUG Message");
-        logger.info("An INFO Message");
-        logger.warn("A WARN Message");
-        logger.error("An ERROR Message");
-        return "redirect:/";
     }
 
 }

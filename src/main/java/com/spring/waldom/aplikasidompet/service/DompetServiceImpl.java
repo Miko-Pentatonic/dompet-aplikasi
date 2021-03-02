@@ -1,7 +1,6 @@
 package com.spring.waldom.aplikasidompet.service;
 
 import com.spring.waldom.aplikasidompet.model.Dompet;
-import com.spring.waldom.aplikasidompet.repository.BalanceRepository;
 import com.spring.waldom.aplikasidompet.repository.DompetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,11 +17,9 @@ public class DompetServiceImpl implements DompetService{
 
     @Autowired
     private final DompetRepository dompetRepository;
-    private final BalanceRepository balanceRepository;
 
-    public DompetServiceImpl(DompetRepository dompetRepository, BalanceRepository balanceRepository) {
+    public DompetServiceImpl(DompetRepository dompetRepository) {
         this.dompetRepository = dompetRepository;
-        this.balanceRepository = balanceRepository;
     }
 
     @Override
@@ -63,7 +60,7 @@ public class DompetServiceImpl implements DompetService{
 
     @Override
     public Double sisaSaldo() {
-        return balanceRepository.sisaSaldo();
+        return dompetRepository.hitungSisaSaldo();
     }
 
 }

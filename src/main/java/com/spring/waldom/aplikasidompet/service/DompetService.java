@@ -12,5 +12,5 @@ public interface DompetService {
     Dompet getDompetById(long id_dom);
     void deleteDompetById(long id_dom);
     Page<Dompet> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection);
-    public Double sisaSaldo();
+    Double sisaSaldo();
 }
