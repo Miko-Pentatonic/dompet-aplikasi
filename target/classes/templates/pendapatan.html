@@ -15,8 +15,7 @@
     <hr>
     <h2>Pendapatan</h2>
 
-    <form action="#" th:action="@{/saveDompet}" th:object="${dompet}"
-          method="POST" class="needs-validation" novalidate>
+    <form action="#" th:action="@{/saveDompet}" th:object="${dompet}" method="POST" class="needs-validation" novalidate>
         <input type="hidden" th:field="*{id_dom}">
         <div class="form-group">
             <input type="number" min="0" class="form-control mb-4 col-4" id="pendapatan" th:field="*{pendapatan}" placeholder="Uang" required>
