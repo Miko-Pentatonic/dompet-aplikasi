@@ -35,14 +35,14 @@
         <input hidden id="date" name="date" th:field="*{tanggal}">
 
         <button type="submit" class="btn btn-info col-2"> Save Pengeluaran</button>
-        <div th:if="${#fields.hasErrors('all')}">
-            <div class="form-group">
-                <div class="alert alert-warning alert-dismissible fade show">
-                    <label th:errors="*{all}">xxx</label>
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                </div>
-            </div>
-        </div>
+<!--        <div th:if="${#fields.hasErrors('all')}">-->
+<!--            <div class="form-group">-->
+<!--                <div class="alert alert-warning alert-dismissible fade show">-->
+<!--                    <label th:errors="*{all}">xxx</label>-->
+<!--                    <button type="button" class="close" data-dismiss="alert">&times;</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
     </form>
 
     <hr>
